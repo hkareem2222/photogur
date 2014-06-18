@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   Photogur::Application.routes.draw do
     
+    delete "pictures/:id/" => 'pictures#destroy', as: "delete_picture"
+    
     root :to => "pictures#index" 
     
     get 'pictures' => 'pictures#index'
